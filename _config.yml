@@ -16,11 +16,13 @@ github_username: KatouMegumiMoe
 description: Megumi's Blog
 favicon: favicon.png # Image must be in assets/images
 repository: KatouMegumiMoe/KatouMegumiMoe.github.io
+about_me: 毕业于中国科学技术大学软件工程系，数据挖掘/算法工程师。
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
-# For production, use your github page url. ex. http://dongchuan.github.io
-url: https://katoumegumimoe.github.io
+# For production, use your github page url.
+# url: https://katoumegumimoe.github.io
+url: http://localhost:4000
 
 ## Gem
 gems:
@@ -47,13 +49,12 @@ kramdown:
   enable_coderay: true
 
 # Disque
-disque: my_disque_settings # ex. httpdongchuangithubio.disqus.com
+disque: my_disque_settings
 
 # Pagination
 paginate: 10
 paginate_path: 'page:num'
 
-# Navigation. If you do not like these modules, just remove them :D
 navs:
   -
     href: /
@@ -65,7 +66,7 @@ navs:
 
   -
     href: /blog
-    label: Blog
+    label: Technology
 
   -
     href: /bookmark
@@ -76,7 +77,7 @@ navs:
     label: About
 
 # Sidebar to show popular repo
-side_bar_repo_limit: 5 # Number of repos to show
+side_bar_repo_limit: 3 # Number of repos to show
 
 # Google Analytics
 analytics :
@@ -86,7 +87,7 @@ analytics :
 
 
 # For about.html. Fell free to create your own!
-skill_software_keywords: [Java, C, C++, Qt, Python, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
+skill_programming_language_keywords: [Java, Python, Scala, C, Pascal]
 skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
 skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
 skill_mobile_app_keywords: [Android, Sketch UI Desgin]

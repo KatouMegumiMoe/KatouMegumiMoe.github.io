@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
+
+    <title>性能评估指标</title>
+    <meta name="description"
+          content="本文将介绍机器学习中的常用评估指标，以衡量算法模型的性能。">
+
+    <link rel="canonical" href="http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2017/03/11/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87.html">
+    <link rel="alternate" type="application/rss+xml" title="Megumi's Blog" href="http://localhost:4000/feed.xml">
+
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Third-Party CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="/bower_components/hover/css/hover-min.css">
+    <link rel="stylesheet" href="/bower_components/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    <!-- CSS set in page -->
+    
+
+    <!-- CSS set in layout -->
+    
+    <link rel="stylesheet" href="/assets/css/sidebar-post-nav.css">
+    
+
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+    <div class="container">
+        <a id="site-header-brand" href="/" title="Zuoyu Liang">
+            <span class="octicon octicon-mark-github"></span> Zuoyu Liang
+        </a>
+        <nav class="site-header-nav" role="navigation">
+            
+            <a href="/"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Home">
+                Home
+            </a>
+            
+            <a href="/open-source"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Open-Source">
+                Open-Source
+            </a>
+            
+            <a href="/blog"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Technology">
+                Technology
+            </a>
+            
+            <a href="/bookmark"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Bookmark">
+                Bookmark
+            </a>
+            
+            <a href="/about"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="About">
+                About
+            </a>
+            
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <section class="jumbotron geopattern" data-pattern-id="性能评估指标">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>性能评估指标</h1>
+            <span class="meta-info">
+                
+                
+                <span class="octicon octicon-calendar"></span> 2017/03/11
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="row">
+
+        
+        <div class="col-md-8 markdown-body">
+
+            <p>本文将介绍机器学习中的常用评估指标，以衡量算法模型的性能。</p>
+
+<h1 id="section">性能评估指标</h1>
+
+<h2 id="section-1">混淆矩阵</h2>
+
+<p style="text-indent:2em">
+    监督学习下的混淆矩阵如图1-1所示：
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/20170426204227164.png" align="center" />
+    <p><font size="2"><b>图1-1 混淆矩阵</b></font></p>
+</div>
+
+<ul>
+  <li>True Positive(TP)：真正，将正类预测为正类，label=1，prediction=1</li>
+  <li>True Negative(TN)：真负，将负类预测为负类，label=0，prediction=0</li>
+  <li>False Positive(FP)：假正，将负类预测为正类，label=0，prediction=1</li>
+  <li>False Negative(FN)：假负，将正类预测为负类，label=1，prediction=0</li>
+</ul>
+
+<h2 id="section-2">精确率和召回率</h2>
+
+<h3 id="section-3">精确率（查准率）</h3>
+
+<p style="text-indent:2em">
+    针对预测结果，它表示的是预测为正的样本中有多少是真正的正样本。比如在推荐系统中，希望推荐内容的确是用户感兴趣的，这时候对系统的精确率要求较高。
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/648C7A6E-3EC7-404F-B319-E8394683C534.png" align="center" style=" width:100px;height:50px" />
+</div>
+
+<h3 id="section-4">召回率（查全率）</h3>
+
+<p style="text-indent:2em">
+针对原来的样本，它表示的是样本中的正例有多少被预测正确。比如在逃犯信息检测系统中，希望尽可能少漏掉逃犯，这时候对系统的查全率要求较高。
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/C38DD2E1-3185-4D4C-B536-83430F7A92D6.png" align="center" style=" width:100px;height:50px" />
+</div>
+
+<h2 id="f-measure">F-Measure</h2>
+
+<p style="text-indent:2em">
+    对于二分类，F-Measure可以综合考虑精确率和召回率情况，F值越大则效果越好，理想状态下F=1，此时精确率=召回率=1。
+</p>
+
+<p style="text-indent:2em">
+    一般情况下，对于不同的场景，对查准率和查全率的重视程度也会有所不同。通过调节参数，可以使F值表现出对查准率/查全率不同的偏好。当alpha&gt;1时，查全率影响更大；当alpha&lt;1时，查准率影响更大。
+</p>
+
+<p style="text-indent:2em">
+    通过调和平均公式，可以推导出精确率和召回率的加权调和平均，如式3-1所示。
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/96A3DBDF-0A2D-4183-ADC9-FB8CC66D91BF.png" align="center" style=" width:300px;height:50px" />
+</div>
+
+<p style="text-indent:2em">
+    右式经过变换后可以得到F-alpha，如下所示：
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/C90AF50D-749F-40E4-9EA3-6B9F0413B0CE.png" align="center" style=" width:150px;height:50px" />
+</div>
+
+<p style="text-indent:2em">
+通常我们采用F1方法综合评估精确率和召回率，此时alpha=1，查全率和查准率的影响相同。
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/A7A1606B-254B-4892-94F1-4344FEFFF390.png" align="center" style=" width:150px;height:50px" />
+</div>
+
+<p style="text-indent:2em">
+    对于多分类，可以分别计算每一类的F值（即正类为当前类，负类为非当前类，对所有类进行遍历），最后进行加权平均。
+</p>
+
+<h2 id="aucroc">AUC与ROC</h2>
+<p style="text-indent:2em">
+    ROC曲线通过调节划分正类和负类的阈值，分别得到一组（真正率，假正率）的横纵坐标，绘制[0, 1]区间内的曲线，x在[0, 1]区间的定积分（面积）即为AUC值。ROC曲线如图4-1所示。
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/FC72EA45-C4D0-4BB5-AE35-4094EFD0104A.png" align="center" style=" width:350px;height:300px" />
+    <p><font size="2"><b>图4-1 ROC曲线</b></font></p>
+</div>
+
+<p style="text-indent:2em">
+    如上图所示，理想情况下，TPR应接近于1，而FPR应接近于0，这样ROC曲线围成的面积为1。AUC=1达到最大值。
+</p>
+
+<p style="text-indent:2em">
+真正率（True Positive Rate），在所有正类中，预测为正的比例：
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/2D566586-B147-4A70-BCEB-0659A20E00B4.png" align="center" style=" width:120px;height:50px" />
+</div>
+
+<p style="text-indent:2em">
+假正率（False Positive Rate），在所有负类中，预测为正的比例：
+</p>
+
+<div align="center">
+    <img src="/assets/images/2017-03-11/A2FA51D6-6678-40B3-9DCD-E167496566F5.png" align="center" style=" width:120px;height:50px" />
+</div>
+
+<p style="text-indent:2em">
+在实际情况中，我们无法绘制一条平滑的曲线作为ROC，因此只能绘制有限样例数的ROC曲线。设有M个测试样例，则ROC曲线由M个点构成。对这M个测试样例按照预测值进行排序，预测值即为当前阈值t，依照阈值t划分出正类和负类，并分别计算TPR和FPR。以此类推得到近似ROC曲线。
+</p>
+
+
+            <!-- Comments -->
+            
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+         */
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//my_disque_settings/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+
+        </div>
+
+        <div class="col-md-4">
+            <h3>Post Directory</h3>
+<div id="post-directory-module">
+<section class="post-directory">
+    <!-- Links that trigger the jumping -->
+    <!-- Added by javascript below -->
+    <dl></dl>
+</section>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( "article h2" ).each(function( index ) {
+            $(".post-directory dl").append("<dt><a class=\"jumper\" hre=#" +
+                    $(this).attr("id")
+                    + ">"
+                    + $(this).text()
+                    + "</a></dt>");
+
+            var children = $(this).nextUntil("h2", "h3")
+
+            children.each(function( index ) {
+                $(".post-directory dl").append("<dd><a class=\"jumper\" hre=#" +
+                        $(this).attr("id")
+                        + ">"
+                        + "&nbsp;&nbsp;- " + $(this).text()
+                        + "</a></dd>");
+            });
+        });
+
+        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+        $(window).scroll(function() {                  // assign scroll event listener
+
+            var currentScroll = $(window).scrollTop(); // get current position
+
+            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                $('#post-directory-module').css({      // scroll to that element or below it
+                    top: '100px',
+                    position: 'fixed',
+                    width: 'inherit'
+                });
+            } else {                                   // apply position: static
+                $('#post-directory-module').css({      // if you scroll above it
+                    position: 'inherit',
+                    width: 'inherit'
+                });
+            }
+
+        });
+
+        $("a.jumper").on("click", function( e ) {
+
+            e.preventDefault();
+
+            $("body, html").animate({
+                scrollTop: ($( $(this).attr('hre') ).offset().top - 100)
+            }, 600);
+
+        });
+    });
+
+</script>
+        </div>
+        
+
+    </div>
+
+</article>
+
+        </div>
+
+    <footer class="container">
+
+    <div class="site-footer">
+
+        <div class="copyright pull-left">
+            <!-- 请不要更改这一行 方便其他人知道模板的来源 谢谢 -->
+            <!-- Please keep this line to let others know where this theme comes from. Thank you :D -->
+            Power by <a href="https://github.com/DONGChuan/Yummy-Jekyll">Yummy Jekyll</a>
+        </div>
+
+        <a href="https://github.com/DONGChuan" target="_blank" aria-label="view source code">
+            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+        </a>
+
+        <div class="pull-right">
+            <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+        </div>
+
+    </div>
+
+    <!-- Third-Party JS -->
+    <script type="text/javascript" src="/bower_components/geopattern/js/geopattern.min.js"></script>
+
+    <!-- My JS -->
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+
+    
+
+    
+    <!-- Google Analytics -->
+    <div style="display:none">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'tracking_id', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    </div>
+    
+
+</footer>
+
+
+    </body>
+
+</html>
