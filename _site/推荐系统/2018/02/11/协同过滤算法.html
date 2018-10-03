@@ -9,11 +9,11 @@
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
 
-    <title>逻辑回归</title>
+    <title>协同过滤算法</title>
     <meta name="description"
-          content="逻辑回归是工业界中最常用的分类算法，本文将介绍逻辑回归相关基本原理。">
+          content="本文将介绍协同过滤算法，包括基于用户的协同过滤和基于物品的协同过滤等。">
 
-    <link rel="canonical" href="http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2017/05/21/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92.html">
+    <link rel="canonical" href="http://localhost:4000/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/2018/02/11/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95.html">
     <link rel="alternate" type="application/rss+xml" title="Megumi's Blog" href="http://localhost:4000/feed.xml">
 
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
@@ -95,14 +95,14 @@
     <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 
-<section class="jumbotron" data-pattern-id="逻辑回归">
+<section class="jumbotron" data-pattern-id="协同过滤算法">
     <div class="container">
         <div id="jumbotron-meta-info">
-            <h1>逻辑回归</h1>
+            <h1>协同过滤算法</h1>
             <span class="meta-info">
                 
                 
-                <span class="octicon octicon-calendar"></span> 2017/05/21
+                <span class="octicon octicon-calendar"></span> 2018/02/11
                 
             </span>
         </div>
@@ -116,95 +116,7 @@
         
         <div class="col-md-8 markdown-body">
 
-            <p>逻辑回归是工业界中最常用的分类算法，本文将介绍逻辑回归相关基本原理。</p>
-
-<h1 id="section">逻辑回归</h1>
-
-<h2 id="sigmoid">sigmoid函数</h2>
-
-<p style="text-indent:2em">
-    逻辑回归也称对数几率回归，使用sigmoid函数将输入映射到(0,1)之间，对样本进行二分类。sigmoid函数连续且单调递增，函数关于(0, 0.5)中心对称，sigmoid函数的性质页在一定程度上决定了逻辑回归使用sigmoid的原因。其函数图像如图1-1所示。
-</p>
-
-<div align="center">
-    <img src="/assets/images/2017-05-21/12557002-D59F-4FE3-90D6-755BB234299D.png" align="center" style=" width:800px;height:400px" />
-    <p><font size="2"><b>图1-1 sigmoid函数曲线</b></font></p>
-</div>
-
-<h2 id="section-1">目标函数及其推导</h2>
-<p style="text-indent:2em">
-    逻辑回归目标函数如下所示：
-</p>
-
-<div align="center">
-    <img src="/assets/images/2017-05-21/F666BCAB-C94E-450A-96B2-21F6F96B1C49.png" align="center" style=" width:400px;height:50px" />
-</div>
-
-<p style="text-indent:2em">
-    用似然函数表示为：
-</p>
-
-<div align="center">
-    <img src="/assets/images/2017-05-21/5158D467-739B-4E08-A4D3-03B6FD3833B1.png" align="center" style=" width:670px;height:80px" />
-</div>
-
-<p style="text-indent:2em">
-    梯度下降法的定义为：
-</p>
-<div align="center">
-    <img src="/assets/images/2017-05-21/708757F3-A66A-4EA7-9E98-DD49CF5616B7.png" align="center" style=" width:180px;height:80px" />
-</div>
-
-<p style="text-indent:2em">
-    使用梯度下降法对上述公式进行求解，得到：
-</p>
-<div align="center">
-    <img src="/assets/images/2017-05-21/85B3930D-4E84-42E2-A330-A08D04932349.png" align="center" style=" width:500px;height:80px" />
-</div>
-
-<p style="text-indent:2em">
-    其中：
-</p>
-<div align="center">
-    <img src="/assets/images/2017-05-21/27756B36-787F-47BE-B977-88E0CA3D6CD0.png" align="center" style=" width:700px;height:80px" />
-</div>
-
-<p style="text-indent:2em">
-    将上述公式代入得：
-</p>
-<div align="center">
-    <img src="/assets/images/2017-05-21/5AA0380D-DC16-4118-B239-CA6E730C4FA4.png" align="center" style=" width:700px;height:350px" />
-</div>
-
-<h2 id="section-2">逻辑回归优缺点</h2>
-
-<h3 id="section-3">优点</h3>
-
-<ul>
-  <li>形式简单，模型可解释性强，可以从不同特征的权重看出该特征对模型的影响程度；</li>
-  <li>训练速度快，资源占用小（只需要存储各个维度的特征值）；</li>
-  <li>方便结果调整，可以调节阈值来划分正类或负类；</li>
-  <li>模型的效果不会太差，应用比较广泛；</li>
-  <li>逻辑回归适用于大规模的数据和特征维度。</li>
-</ul>
-
-<h3 id="section-4">缺点</h3>
-
-<ul>
-  <li>形式简单导致准确率不高；</li>
-  <li>很难处理数据不均衡问题，需要额外进行降采样；</li>
-  <li>很难处理非线性问题，需要将离散特征进行独热编码；</li>
-  <li>逻辑回归不能进行特征筛选，可以考虑 GBDT+LR 或 XGBoost+LR。</li>
-</ul>
-
-<h2 id="section-5">答疑</h2>
-
-<ul>
-  <li><b>如果有很多的特征高度相关或一个特征重复了多遍，会造成怎样的影响？</b></li>
-</ul>
-<p style="text-indent:2em">
-    如果在损失函数最终收敛的情况下，其实就算有很多特征高度相关也不会影响分类器的效果。对于某一特征重复了N遍，对模型也没有影响，其实质是将原特征分成N份，每一份的权重占1/N。
-</p>
+            <p>本文将介绍协同过滤算法，包括基于用户的协同过滤和基于物品的协同过滤等。</p>
 
 
             <!-- Comments -->

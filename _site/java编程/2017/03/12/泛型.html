@@ -9,11 +9,11 @@
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
 
-    <title>Open Source Projects</title>
+    <title>泛型</title>
     <meta name="description"
-          content="Megumi's Blog">
+          content="本文将介绍Java中的泛型及其应用。">
 
-    <link rel="canonical" href="http://localhost:4000/open-source.html">
+    <link rel="canonical" href="http://localhost:4000/java%E7%BC%96%E7%A8%8B/2017/03/12/%E6%B3%9B%E5%9E%8B.html">
     <link rel="alternate" type="application/rss+xml" title="Megumi's Blog" href="http://localhost:4000/feed.xml">
 
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
@@ -30,10 +30,10 @@
 
     <!-- CSS set in page -->
     
-    <link rel="stylesheet" href="/assets/css/open-source.css">
-    
 
     <!-- CSS set in layout -->
+    
+    <link rel="stylesheet" href="/assets/css/sidebar-post-nav.css">
     
 
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -91,90 +91,134 @@
 
 
         <div class="content">
-            
-<head>
-    <link rel="stylesheet" href="/assets/css/index.css" />
+            <head>
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 
-<div id="container-open-source">
-    <section class="jumbotron" data-pattern-id="Open Source Projects">
-        <div class="container">
-            <div id="jumbotron-meta-info">
-                <h1>Open Source Projects</h1>
-                <span class="meta-info">
-                    I have <span class="repo-count badge">2</span> projects on Github
-                </span>
-            </div>
+<section class="jumbotron" data-pattern-id="泛型">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>泛型</h1>
+            <span class="meta-info">
+                
+                
+                <span class="octicon octicon-calendar"></span> 2017/03/12
+                
+            </span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="container">
-        <div class="repo-list row">
-            <!-- Check here for github metadata -->
-            <!-- https://help.github.com/articles/repository-metadata-on-github-pages/ -->
-            
-            <div class="col-md-4 card text-center">
-                <div class="thumbnail">
-                    <div class="card-image geopattern" data-pattern-id="KatouMegumiMoe.github.io">
-                        <div class="card-image-cell">
-                            <h3 class="card-title">
-                                <a href="https://github.com/KatouMegumiMoe/KatouMegumiMoe.github.io" target="_blank">KatouMegumiMoe.github.io</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="caption">
-                        <div class="card-description">
-                            <p class="card-text"></p>
-                        </div>
-                        <div class="card-text">
-                            <span data-toggle="tooltip" class="meta-info" title="1 stars">
-                                <span class="octicon octicon-star"></span> 1
-                            </span>
-                            <span data-toggle="tooltip" class="meta-info" title="0 forks">
-                                <span class="octicon octicon-git-branch"></span> 0
-                            </span>
-                            <span data-toggle="tooltip" class="meta-info" title="Last updated：2018-10-02 13:34:05 UTC">
-                                <span class="octicon octicon-clock"></span>
-                                <time datetime="2018-10-02 13:34:05 UTC" title="2018-10-02 13:34:05 UTC">2018-10-02</time>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4 card text-center">
-                <div class="thumbnail">
-                    <div class="card-image geopattern" data-pattern-id="telecom">
-                        <div class="card-image-cell">
-                            <h3 class="card-title">
-                                <a href="https://github.com/KatouMegumiMoe/telecom" target="_blank">telecom</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="caption">
-                        <div class="card-description">
-                            <p class="card-text">BDCI Competition </p>
-                        </div>
-                        <div class="card-text">
-                            <span data-toggle="tooltip" class="meta-info" title="0 stars">
-                                <span class="octicon octicon-star"></span> 0
-                            </span>
-                            <span data-toggle="tooltip" class="meta-info" title="0 forks">
-                                <span class="octicon octicon-git-branch"></span> 0
-                            </span>
-                            <span data-toggle="tooltip" class="meta-info" title="Last updated：2018-10-02 07:33:15 UTC">
-                                <span class="octicon octicon-clock"></span>
-                                <time datetime="2018-10-02 07:33:15 UTC" title="2018-10-02 07:33:15 UTC">2018-10-02</time>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
 
+    <div class="row">
+
+        
+        <div class="col-md-8 markdown-body">
+
+            <p>本文将介绍Java中的泛型及其应用。</p>
+
+
+            <!-- Comments -->
+            
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+         */
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//my_disque_settings/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>
+
+
+        </div>
+
+        <div class="col-md-4">
+            <h3>Post Directory</h3>
+<div id="post-directory-module">
+<section class="post-directory">
+    <!-- Links that trigger the jumping -->
+    <!-- Added by javascript below -->
+    <dl></dl>
+</section>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( "article h2" ).each(function( index ) {
+            $(".post-directory dl").append("<dt><a class=\"jumper\" hre=#" +
+                    $(this).attr("id")
+                    + ">"
+                    + $(this).text()
+                    + "</a></dt>");
+
+            var children = $(this).nextUntil("h2", "h3")
+
+            children.each(function( index ) {
+                $(".post-directory dl").append("<dd><a class=\"jumper\" hre=#" +
+                        $(this).attr("id")
+                        + ">"
+                        + "&nbsp;&nbsp;- " + $(this).text()
+                        + "</a></dd>");
+            });
+        });
+
+        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+        $(window).scroll(function() {                  // assign scroll event listener
+
+            var currentScroll = $(window).scrollTop(); // get current position
+
+            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                $('#post-directory-module').css({      // scroll to that element or below it
+                    top: '100px',
+                    position: 'fixed',
+                    width: 'inherit'
+                });
+            } else {                                   // apply position: static
+                $('#post-directory-module').css({      // if you scroll above it
+                    position: 'inherit',
+                    width: 'inherit'
+                });
+            }
+
+        });
+
+        $("a.jumper").on("click", function( e ) {
+
+            e.preventDefault();
+
+            $("body, html").animate({
+                scrollTop: ($( $(this).attr('hre') ).offset().top - 100)
+            }, 600);
+
+        });
+    });
+
+</script>
+        </div>
+        
+
+    </div>
+
+</article>
 
         </div>
 
@@ -204,8 +248,6 @@
     <!-- My JS -->
     <script type="text/javascript" src="/assets/js/script.js"></script>
 
-    
-    <script src="/assets/js/underscore-min.js"></script>
     
 
     

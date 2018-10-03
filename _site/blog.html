@@ -60,22 +60,22 @@
             <a href="/open-source"
                class=" site-header-nav-item hvr-underline-from-center"
                target=""
-               title="Open-Source">
-                Open-Source
+               title="Photos">
+                Photos
             </a>
             
             <a href="/blog"
                class=" site-header-nav-item hvr-underline-from-center"
                target=""
-               title="Technology">
-                Technology
+               title="Blog">
+                Blog
             </a>
             
             <a href="/bookmark"
                class=" site-header-nav-item hvr-underline-from-center"
                target=""
-               title="Bookmark">
-                Bookmark
+               title="Technology">
+                Technology
             </a>
             
             <a href="/about"
@@ -91,7 +91,11 @@
 
 
         <div class="content">
-            <section class="jumbotron geopattern" data-pattern-id="Technology">
+            <head>
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+
+<section class="jumbotron" data-pattern-id="Technology">
     <div class="container">
         <div id="jumbotron-meta-info">
             <h1>Technology</h1>
@@ -104,15 +108,7 @@
         </div>
     </div>
 </section>
-<script>
-    $(document).ready(function(){
 
-        $('.geopattern').each(function(){
-            $(this).geopattern($(this).data('pattern-id'));
-        });
-
-    });
-</script>
 <article class="post container">
 
     <div class="row">
@@ -122,10 +118,34 @@
         <!-- Blog list -->
         <ul id="posts-list">
             
+            <li class="posts-list-item" data-title="协同过滤算法">
+                <div class="posts-content">
+                    <span class="posts-list-meta">2018-02-11</span>
+                    <a class="posts-list-name bubble-float-left" href="http://localhost:4000/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/2018/02/11/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95.html">协同过滤算法</a>
+                    <span class="circle"></span>
+                </div>
+            </li>
+            
             <li class="posts-list-item" data-title="逻辑回归">
                 <div class="posts-content">
                     <span class="posts-list-meta">2017-05-21</span>
                     <a class="posts-list-name bubble-float-left" href="http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2017/05/21/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92.html">逻辑回归</a>
+                    <span class="circle"></span>
+                </div>
+            </li>
+            
+            <li class="posts-list-item" data-title="支持向量机">
+                <div class="posts-content">
+                    <span class="posts-list-meta">2017-04-19</span>
+                    <a class="posts-list-name bubble-float-left" href="http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2017/04/19/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA.html">支持向量机</a>
+                    <span class="circle"></span>
+                </div>
+            </li>
+            
+            <li class="posts-list-item" data-title="泛型">
+                <div class="posts-content">
+                    <span class="posts-list-meta">2017-03-12</span>
+                    <a class="posts-list-name bubble-float-left" href="http://localhost:4000/java%E7%BC%96%E7%A8%8B/2017/03/12/%E6%B3%9B%E5%9E%8B.html">泛型</a>
                     <span class="circle"></span>
                 </div>
             </li>
@@ -189,7 +209,7 @@
     <div class="list-group">
         <a href="javascript:" class="list-group-item" data-category="" data-posts="">
             全部
-            <span class="badge">3</span>
+            <span class="badge">6</span>
         </a>
         
         <a href="javascript:" class="list-group-item" data-category="样例" data-posts="Markdown样例||">
@@ -197,9 +217,19 @@
             <span class="badge">1</span>
         </a>
         
-        <a href="javascript:" class="list-group-item" data-category="机器学习" data-posts="逻辑回归||性能评估指标||">
+        <a href="javascript:" class="list-group-item" data-category="机器学习" data-posts="逻辑回归||支持向量机||性能评估指标||">
             机器学习
-            <span class="badge">2</span>
+            <span class="badge">3</span>
+        </a>
+        
+        <a href="javascript:" class="list-group-item" data-category="Java编程" data-posts="泛型||">
+            Java编程
+            <span class="badge">1</span>
+        </a>
+        
+        <a href="javascript:" class="list-group-item" data-category="推荐系统" data-posts="协同过滤算法||">
+            推荐系统
+            <span class="badge">1</span>
         </a>
         
     </div>

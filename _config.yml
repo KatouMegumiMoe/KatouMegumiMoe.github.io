@@ -22,6 +22,7 @@ about_me: 毕业于中国科学技术大学软件工程系，数据挖掘/算法
 # For local test, please use http://localhost:4000
 # For production, use your github page url.
 # url: https://katoumegumimoe.github.io
+# local running with command 'bundle exec jekyll serve'
 url: http://localhost:4000
 
 ## Gem
@@ -52,7 +53,7 @@ kramdown:
 disque: my_disque_settings
 
 # Pagination
-paginate: 10
+paginate: 5
 paginate_path: 'page:num'
 
 navs:
@@ -62,15 +63,15 @@ navs:
 
   -
     href: /open-source
-    label: Open-Source
+    label: Photos
 
   -
     href: /blog
-    label: Technology
+    label: Blog
 
   -
     href: /bookmark
-    label: Bookmark
+    label: Technology
 
   -
     href: /about
